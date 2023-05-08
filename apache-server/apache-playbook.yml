@@ -1,21 +1,19 @@
----
-- hosts: all
-  become: yes 
-   
-  tasks: 
-  - name: install server apache2
-    apt: 
-      name: apache2
-      state: latest
-
-<<<<<<< HEAD
-  - name: create index.html file
-    file: 
-      path: /www/var/index.html
-          
-=======
-  # - name: create index.html file
-  #   file: 
-  #     path: /www/var/index.html
-       
->>>>>>> bf66da212ee631b3f0d98f8d51a9788a27060bd8
+ ---
+ 
+ - hosts: all
+   become: true
+   tasks:
+ 
+   - name: update repository index
+     apt:
+       update_cache: yes
+ 
+   - name: install apache2 package
+     apt:
+       name: apache2
+       state: latest
+ 
+   - name: add php support for apache
+     apt:
+       name: libapache2-mod-php
+       state: latest          
