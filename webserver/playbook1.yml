@@ -1,25 +1,24 @@
 ---
-
 - hosts: all
   become: yes
-  
-  tasks:             
-  - name : install httpd
-    yum:
+
+  tasks:
+    - name: install httpd
+      yum:
         name: httpd
         state: latest
-  
-  - name: create index.html file
-    file:
+
+    - name: create index.html file
+      file:
         path: /www/var/index.html
         state: touch
 
-  - name: enter hmtl text into the file
-    fileinline:
-        path : /www/var/index.html
+    - name: enter hmtl text into the file
+      fileinline:
+        path: /www/var/index.html
         line: "ansible playbook works !!"
 
-  - name: start httpd service 
-    service: 
+    - name: start httpd service
+      service:
         name: httpd
         state: started
