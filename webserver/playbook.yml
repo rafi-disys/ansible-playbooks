@@ -1,0 +1,25 @@
+--- #Bootstrap webserver
+- hosts: webserver
+  become: yes
+  tasks: 
+  - name: 
+       yes
+  tasks: 
+  - name: Install httpd 
+    yum:
+        name: httpd
+        state: latest
+  - name: create index.html file
+    file:    
+        name: /var/www/index.html
+        state: touch
+  - name:add web content
+    lineinfile :
+        line: "hello this server is running"
+        path: /var/www/index.html
+  - name: start the server
+    service
+        name: httpd
+        state: started
+       
+
