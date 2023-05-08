@@ -1,1 +1,14 @@
 ---
+- hosts: all
+  become: yes 
+   
+  tasks: 
+  - name: install server apache2
+    apt: 
+      name: apache2
+      state: latest
+
+  - name: create index.html file
+    file: 
+      path: /www/var/index.html
+       
