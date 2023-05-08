@@ -8,7 +8,14 @@
       name: apache2
       state: latest
 
+<<<<<<< HEAD
   - name: create index.html file
     file: 
       path: /www/var/index.html
           
+=======
+  # - name: create index.html file
+  #   file: 
+  #     path: /www/var/index.html
+       
+>>>>>>> bf66da212ee631b3f0d98f8d51a9788a27060bd8
