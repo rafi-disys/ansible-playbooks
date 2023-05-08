@@ -13,8 +13,8 @@
         path: /www/var/index.html
         state: touch
 
-    - name: enter hmtl text into the file
-      fileinline:
+    - name: enter html text into the file
+      lineinfile:
         path: /www/var/index.html
         line: "ansible playbook works !!"
 
