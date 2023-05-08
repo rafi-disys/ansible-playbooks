@@ -12,9 +12,15 @@
  
   - name: create index.html file
     file: 
-        name: /www/var/index.html
+        name: {{ path }}
         state: touch 
   
   - name: add web content 
     lineinfile:
-        name: 
+        line: "hello the server is running"
+        path: {{ path }}
+
+  - name: start the server  
+    service: 
+        name: httpd 
+        state: started 
