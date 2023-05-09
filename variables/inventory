@@ -1,0 +1,6 @@
+[webservers]
+node1 ansible_host=bbbb486d373f4a47a51c01f06c018b332c.mylabserver.com
+node2 ansible_host=bbbb486d373f4a47a51c01f06c018b333c.mylabserver.com
+
+[webservers:vars]
+ansible_python_interpreter= /usr/bin/python3 

@@ -1,0 +1,11 @@
+working_dir: /home/cloud_user/ansible-playbooks/variables/
+
+[service_list]
+- httpd
+- nfs
+- mariadb
+
+
+[share_path]
+- nfs: /mnt/cifs
+
